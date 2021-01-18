@@ -17,9 +17,11 @@ knitr::opts_chunk$set(include = FALSE)
 ```
 
 ```{r data, include = FALSE, echo = FALSE}
-df_01 <- readRDS("data/df_01.rds")
+df_01 <- readRDS("../data/df_01.rds")
 td1 <- df_01$coef[nrow(df_01) - 00]
 td0 <- df_01$coef[nrow(df_01) - 12]
+getwd()
+
 ```
 
 ## Resumen ejecutivo

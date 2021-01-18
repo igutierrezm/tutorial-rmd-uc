@@ -1,29 +1,25 @@
 # Reproduce data/df_02.rds
 
-import::from(dplyr, group_by, matches, mutate, rename_with, summarise, "%>%")
-import::from(purrr, map, reduce)
-import::from(srvyr, as_survey, survey_ratio)
-
+import::from(magrittr, "%>%", "%T>%")
 options(survey.lonely.psu = "certainty")
 
-list.files("data/ene", pattern = "*.rds", full.names = TRUE) %>%
-  map(
+df_02 <-
+  list.files("data/ene", pattern = "*.rds", full.names = TRUE) %>%
+  purrr::map(
     ~ readRDS(.x) %>%
-      rename_with(~ "conglomerado", matches("id_directorio")) %>%
-      rename_with(~ "estrato",      matches("estrato_unico")) %>%
-      as_survey(
+      dplyr::rename_with(~ "conglomerado", dplyr::matches("id_directorio")) %>%
+      dplyr::rename_with(~ "estrato",      dplyr::matches("estrato_unico")) %>%
+      dplyr::mutate(
+        de = activ == 2,        # 1 si está desocupado,              0 si no
+        ft = activ %in% c(1, 2) # I si está en la fuerza de trabajo, 0 si no
+      ) %>%
+      srvyr::as_survey(
         id      = conglomerado, 
         strata  = estrato, 
         weights = fact_cal
       ) %>%
-      mutate(
-        de = activ == 2,        # 1 si está desocupado,              0 si no
-        ft = activ %in% c(1, 2) # I si está en la fuerza de trabajo, 0 si no
-      ) %>%
-      group_by(ano_trimestre, mes_central, sexo) %>%
-      summarise(
-        coef = 100 * survey_ratio(de, ft, na.rm = TRUE)
-      )
+      srvyr::group_by(ano_trimestre, mes_central, sexo) %>%
+      srvyr::summarise(coef = 100 * srvyr::survey_ratio(de, ft, na.rm = TRUE))
   ) %>%
-  reduce(rbind) %>%
+  purrr::reduce(rbind) %T>%
   saveRDS("data/df_02.rds")

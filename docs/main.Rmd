@@ -18,8 +18,8 @@ library(magrittr)
 ## Slide 1
 
 Veamos un resumen de la BBDD "cars":
-```{r}
-summary(cars)
+```{r, local = }
+getwd()
 ```
 
 ## Slide 2

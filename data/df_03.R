@@ -1,23 +1,21 @@
 # Reproduce data/df_03.rds
 
-import::from(dplyr, group_by, matches, mutate, rename_with, summarise, "%>%")
-import::from(purrr, map, reduce)
-import::from(srvyr, as_survey, survey_total)
-
+import::from(magrittr, "%>%", "%T>%")
 options(survey.lonely.psu = "certainty")
 
-list.files("data/ene", pattern = "*.rds", full.names = TRUE) %>%
-  map(
+df_03 <-
+  list.files("data/ene", pattern = "*.rds", full.names = TRUE) %>%
+  purrr::map(
     ~ readRDS(.x) %>%
-      rename_with(~ "conglomerado", matches("id_directorio")) %>%
-      rename_with(~ "estrato",      matches("estrato_unico")) %>%
-      as_survey(
+      dplyr::rename_with(~ "conglomerado", dplyr::matches("id_directorio")) %>%
+      dplyr::rename_with(~ "estrato",      dplyr::matches("estrato_unico")) %>%
+      srvyr::as_survey(
         id      = conglomerado, 
         strata  = estrato, 
         weights = fact_cal
       ) %>%
-      group_by(ano_trimestre, mes_central, cae_general) %>%
-      summarise(ocupados = survey_total())
+      srvyr::group_by(ano_trimestre, mes_central, cae_general) %>%
+      srvyr::summarise(ocupados = survey_total())
   ) %>%
-  reduce(rbind) %>%
+  purrr::reduce(rbind) %T>%
   saveRDS("data/df_03.rds")

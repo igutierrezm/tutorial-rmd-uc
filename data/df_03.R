@@ -1,5 +1,6 @@
 # Reproduce data/df_03.rds
 
+import::from(haven, labelled)
 import::from(magrittr, "%>%", "%T>%")
 options(survey.lonely.psu = "certainty")
 
@@ -15,7 +16,7 @@ df_03 <-
         weights = fact_cal
       ) %>%
       srvyr::group_by(ano_trimestre, mes_central, cae_general) %>%
-      srvyr::summarise(ocupados = survey_total())
+      srvyr::summarise(ocupados = srvyr::survey_total())
   ) %>%
   purrr::reduce(rbind) %T>%
   saveRDS("data/df_03.rds")

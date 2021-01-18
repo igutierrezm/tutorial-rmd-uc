@@ -1,5 +1,6 @@
 # Reproduce data/df_01.rds
 
+import::from(haven, labelled)
 import::from(magrittr, "%>%", "%T>%")
 options(survey.lonely.psu = "certainty")
 

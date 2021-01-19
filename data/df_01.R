@@ -24,3 +24,4 @@ df_01 <-
   ) %>%
   purrr::reduce(rbind) %T>%
   saveRDS("data/df_01.rds")
+

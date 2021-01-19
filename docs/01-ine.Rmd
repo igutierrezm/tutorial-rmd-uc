@@ -31,33 +31,32 @@ knitr::opts_chunk$set(include = FALSE)
 source("data/df_01.R")
 ```
 
-```{r data, include = FALSE, echo = FALSE}
+```{r data}
 df_01 <- readRDS("data/df_01.rds")
 td1 <- df_01$coef[nrow(df_01) - 00]
 td0 <- df_01$coef[nrow(df_01) - 12]
-getwd()
-
 ```
 
 ## Resumen ejecutivo
 
-- En el trimestre septiembre-noviembre de 2020, la estimación de la tasa de 
-desocupación nacional fue **`r round(td1, 1)`%**, incrementándose 
+- En el trimestre septiembre-noviembre de 2020, la estimación de la tasa de
+desocupación nacional fue **`r round(td1, 1)`%**, incrementándose
 **`r round(td1 - td0, 1)`** puntos porcentuales (pp.) en doce meses.
 
 - Anualmente, la estimación del total de ocupados descendió **12,5%**.
-- La disminución de los ocupados fue incidida, principalmente, por los sectores 
-comercio **(-11,3%)**, alojamiento y servicio de comidas **(-41,5%)** y 
+- La disminución de los ocupados fue incidida, principalmente, por los sectores
+comercio **(-11,3%)**, alojamiento y servicio de comidas **(-41,5%)** y
 construcción **(-23,0%)**.
 
-- Los ocupados ausentes, que representaron el **9,3%** del total de ocupados, 
-crecieron **15,8%** (equivalente a **101.150** personas) en doce meses. Los 
-trabajadores acogidos a la Ley de Protección al Empleo se encuentran incluidos 
+- Los ocupados ausentes, que representaron el **9,3%** del total de ocupados,
+crecieron **15,8%** (equivalente a **101.150** personas) en doce meses. Los
+trabajadores acogidos a la Ley de Protección al Empleo se encuentran incluidos
 en esta categoría.
 
-- La población fuera de la fuerza de trabajo aumentó **19,9%** en doce meses, 
+- La población fuera de la fuerza de trabajo aumentó **19,9%** en doce meses,
 influida principalmente por los inactivos habituales.
 
-- La tasa de desocupación ajustada estacionalmente fue **11,3%**, retrocediendo 
-**0,4 pp.** con respecto al trimestre móvil anterior. En el mismo período, los 
+- La tasa de desocupación ajustada estacionalmente fue **11,3%**, retrocediendo
+**0,4 pp.** con respecto al trimestre móvil anterior. En el mismo período, los
 ocupados se expandieron **3,0%** (correspondiente a **227.388** personas).
+

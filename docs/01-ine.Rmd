@@ -48,10 +48,14 @@ desocupación nacional fue **`r round(td1, 1)`%**, incrementándose
 comercio **(-11,3%)**, alojamiento y servicio de comidas **(-41,5%)** y
 construcción **(-23,0%)**.
 
-- Los ocupados ausentes, que representaron el **9,3%** del total de ocupados,
-crecieron **15,8%** (equivalente a **101.150** personas) en doce meses. Los
-trabajadores acogidos a la Ley de Protección al Empleo se encuentran incluidos
-en esta categoría.
+- Los ocupados ausentes^[Los ocupados ausentes son personas que, teniendo
+actualmente una ocupación, estuvieron ausentes de la misma durante la semana de 
+referencia. Para ser considerados como tal, deben mantener un vínculo con el
+trabajo, seguir percibiendo algún ingreso o ganancia por ese trabajo o volver a
+trabajar dentro de cuatro semanas o menos.], que representaron el **9,3%** del
+total de ocupados, crecieron **15,8%** (equivalente a **101.150** personas) en 
+doce meses. Los trabajadores acogidos a la Ley de Protección al Empleo se 
+encuentran incluidos en esta categoría.
 
 - La población fuera de la fuerza de trabajo aumentó **19,9%** en doce meses,
 influida principalmente por los inactivos habituales.

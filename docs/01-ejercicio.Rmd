@@ -1,0 +1,36 @@
+---
+title: "Ejercicio"
+author: "Iván Gutiérrez"
+output: 
+  html_document:
+    theme: spacelab
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio
+
+El archivo `docs/anexo/03-boletin-empleo.pdf` contiene el Boletín Estadístico
+de empleo trimestral, generado por el Instituto Nacional de Estadísticas, para
+el trimestre móvil septiembre 2020 / noviembre 2020. Tomando este boletín
+como referencia.
+
+1. Reproduzca el título, el subtítulo, y el resumen ejecutivo. Enfóquese en el 
+marcado del texto, no en reproducir las cifras. Puede encontrar el logo en
+`images/logo-ine.jpg`
+
+2. El archivo `data/df_01.rds` contiene la estimación oficial de la tasa de 
+desocupación, según año y trimestre móvil. Use estos datos para replicar las 
+cifras del primer ítem dentro del resumen ejecutivo.
+
+3. El archivo `data/df_02.rds` contiene la estimación oficial del número de
+ocupados, según año y trimestre móvil. Use estos datos para replicar las cifras 
+del segundo ítem dentro del resumen ejecutivo.
+
+4. El archivo `data/df_03.rds` contiene la estimación oficial de la tasa de 
+desocupación, según sexo, año y trimestre móvil. Use estos datos para replicar 
+el primer gráfico del documento.

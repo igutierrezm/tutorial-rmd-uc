@@ -9,10 +9,13 @@
   background-size: contain;
 }
 
-
 .subtitle {
   color: white;
   background-color: rgb(68, 110, 155);
   font-size: 16px;
   padding: 10px 10px 5px 10px;
+}
+
+h1 {
+  color: rgb(68, 110, 155);
 }

@@ -4,8 +4,6 @@ import::from(haven, labelled)
 import::from(magrittr, "%>%", "%T>%")
 options(survey.lonely.psu = "certainty")
 
-tada_ocupado
-
 tasa_desocupacion_sexo <-
   list.files("data/ene", pattern = "*.rds", full.names = TRUE) %>%
   purrr::map(

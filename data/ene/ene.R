@@ -1,11 +1,9 @@
 # Reproduce data/ene/*
-# (asume que todas las BBDD están en data-raw/ene/ en formato .dta)
-
+# Nota: Asume que todas las BBDD están en data-raw/ene/, en formato .dta
 
 import::from(dplyr, matches, "%>%") 
 import::from(haven, read_dta) 
 import::from(purrr, map)
-
 list.files("data-raw/ene") %>%
   map(
     ~ paste0("data-raw/ene/", .x) %>%

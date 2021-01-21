@@ -23,5 +23,5 @@ ocupados <-
       srvyr::summarise(coef = srvyr::survey_total(ocupado)) %>%
       dplyr::ungroup()
   ) %>%
-  purrr::reduce(rbind) #%T>%
-  # saveRDS("data/ocupados.rds")
+  purrr::reduce(rbind) %T>%
+  saveRDS("data/ocupados.rds")

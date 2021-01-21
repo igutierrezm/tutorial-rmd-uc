@@ -63,9 +63,10 @@ p <-
     text             = element_text(size = 14)
   ) +
   labs(
-    title = "Tasa de desocupación",
+    title = "Tasa de desocupación, según sexo y trimestre móvil",
     x = "Trimestre móvil, representado por su mes central",
-    y = "Tasa de desocupación (%)"
+    y = "Tasa de desocupación (%)",
+    colour = ""
   )
 q <- plotly::ggplotly(p)
 p

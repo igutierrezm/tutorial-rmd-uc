@@ -4,33 +4,31 @@ author: "Iván Gutiérrez"
 output: 
   html_document:
     theme: spacelab
-    toc: true
-    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```
 
-## Ejercicio
-
-El archivo `docs/anexo/03-boletin-empleo.pdf` contiene el Boletín Estadístico
-de empleo trimestral, generado por el Instituto Nacional de Estadísticas, para
-el trimestre móvil septiembre 2020 / noviembre 2020. Tomando este boletín
+El archivo `docs/anexo/03-boletin-empleo.pdf` contiene el boletín estadístico
+de empleo trimestral, generado por el Instituto Nacional de Estadísticas (INE), 
+para el trimestre móvil septiembre 2020 / noviembre 2020. Tomando este boletín
 como referencia.
 
 1. Reproduzca el título, el subtítulo, y el resumen ejecutivo. Enfóquese en el 
-marcado del texto, no en reproducir las cifras. Puede encontrar el logo en
-`images/logo-ine.jpg`
+marcado del texto, no en reproducir las cifras. Añada el logo al final del
+documento; puede encontrarlo en `images/logo-ine.jpg`
 
-2. El archivo `data/df_01.rds` contiene la estimación oficial de la tasa de 
-desocupación, según año y trimestre móvil. Use estos datos para replicar las 
-cifras del primer ítem dentro del resumen ejecutivo.
+2. El archivo `data/tasa_desocupacion.rds` contiene la estimación oficial de la 
+tasa de desocupación, según trimestre móvil^[Para efectos de este ejercicio, 
+identificaremos cada trimestre móvil por su mes central.]. Use estos datos 
+para replicar las cifras del primer ítem dentro del resumen ejecutivo.
 
-3. El archivo `data/df_02.rds` contiene la estimación oficial del número de
-ocupados, según año y trimestre móvil. Use estos datos para replicar las cifras 
-del segundo ítem dentro del resumen ejecutivo.
+3. El archivo `data/ocupados.rds` contiene la estimación oficial del número de
+ocupados, según trimestre móvil. Use estos 
+datos para replicar las cifras del segundo ítem dentro del resumen ejecutivo.
 
-4. El archivo `data/df_03.rds` contiene la estimación oficial de la tasa de 
-desocupación, según sexo, año y trimestre móvil. Use estos datos para replicar 
-el primer gráfico del documento.
+4. El archivo `data/tasa_desocupacion_sexo.rds` contiene la estimación oficial 
+de la tasa de desocupación, según trimestre móvil. Use estos datos para
+replicar el primer gráfico del documento.
